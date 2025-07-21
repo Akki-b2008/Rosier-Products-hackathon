@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "Ibrand";
+  src: url("../../assets//fonts/ibrands.otf");
+}
+
+@font-face {
+  font-family: "Enorm";
+  src: url("../../assets//fonts/enorm.otf");
+}
+
+.NavBar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 2vw, 13px) clamp(16px, 4vw, 20px);
+  border-bottom: 1.5px solid rgba(107, 107, 107, 0.219);
+  box-shadow: 0 5px 20px #4d4d4c;
+  background-color: #6f5230;
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: clamp(50px, 4vw, 100px);
+    }
+  }
+
+  .nav_center {
+    width: 100%;
+    max-width: clamp(500px, 30vw, 700px);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    background-color: #f2d2a1;
+    padding: clamp(6px, 1vw, 10px) clamp(14px, 4vw, 20px);
+    border-radius: 40px;
+
+    h2 {
+      font-family: "Ibrand", sans-serif;
+      font-weight: 500;
+      font-size: clamp(0.7rem, 3vw, 1.5rem);
+      transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+
+      &:hover {
+        border-radius: 20px;
+        padding: 8px 10px;
+        background-color: #6f5230;
+        color: #f2d2a1;
+        font-size: clamp(0.7rem, 3vw, 1.1rem);
+      }
+    }
+  }
+
+  .nav_right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 13px;
+    color: white;
+    padding-right: 10px;
+
+    .Search {
+      width: clamp(1.6rem, 6vw, 2rem);
+      height: clamp(1.6rem, 6vw, 2rem);
+
+      &:hover {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #f2d2a1;
+        padding: 8px;
+        color: black;
+      }
+    }
+
+    .Cart {
+      width: clamp(1.6rem, 6vw, 2rem);
+      height: clamp(1.6rem, 6vw, 2rem);
+
+      &:hover {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #f2d2a1;
+        padding: 8px;
+        color: black;
+      }
+    }
+
+    .User {
+      width: clamp(1.6rem, 6vw, 2rem);
+      height: clamp(1.6rem, 6vw, 2rem);
+
+      &:hover {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: #f2d2a1;
+        padding: 8px;
+        color: black;
+      }
+    }
+
+    .Menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .NavBar {
+    .nav_center {
+      display: none;
+    }
+
+    .nav_right {
+      padding-right: 0;
+
+      .Menu {
+        display: inline-block;
+      }
+
+      .Cart {
+        display: none;
+      }
+    }
+  }
+}

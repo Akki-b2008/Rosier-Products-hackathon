@@ -2,10 +2,6 @@
   font-family: "Ibrand";
   src: url("../../assets//fonts/ibrands.otf");
 }
-@font-face {
-  font-family: "Enorm";
-  src: url("../../assets//fonts/enorm.otf");
-}
 .NavBar {
   width: 100%;
   display: flex;
@@ -14,7 +10,10 @@
   padding: clamp(10px, 2vw, 13px) clamp(16px, 4vw, 20px);
   border-bottom: 1.5px solid rgba(107, 107, 107, 0.219);
   box-shadow: 0 5px 20px #4d4d4c;
-  background-color: #6f5230;
+  background-color: #2d3a2e;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .NavBar .logo {
   display: flex;
@@ -33,7 +32,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  background-color: #f2d2a1;
+  background-color: rgba(253, 253, 253, 0.8274509804);
   padding: clamp(6px, 1vw, 10px) clamp(14px, 4vw, 20px);
   border-radius: 40px;
 }
@@ -46,8 +45,8 @@
 .NavBar .nav_center h2:hover {
   border-radius: 20px;
   padding: 8px 10px;
-  background-color: #6f5230;
-  color: #f2d2a1;
+  background-color: #6f9e63;
+  color: #fdfdfd;
   font-size: clamp(0.7rem, 3vw, 1.1rem);
 }
 .NavBar .nav_right {
@@ -59,38 +58,35 @@
   padding-right: 10px;
 }
 .NavBar .nav_right .Search {
-  width: clamp(1.6rem, 6vw, 2rem);
-  height: clamp(1.6rem, 6vw, 2rem);
+  size: 25;
 }
 .NavBar .nav_right .Search:hover {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #f2d2a1;
+  background-color: #6f9e63;
   padding: 8px;
   color: black;
 }
 .NavBar .nav_right .Cart {
-  width: clamp(1.6rem, 6vw, 2rem);
-  height: clamp(1.6rem, 6vw, 2rem);
+  size: 25;
 }
 .NavBar .nav_right .Cart:hover {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #f2d2a1;
+  background-color: #6f9e63;
   padding: 8px;
   color: black;
 }
 .NavBar .nav_right .User {
-  width: clamp(1.6rem, 6vw, 2rem);
-  height: clamp(1.6rem, 6vw, 2rem);
+  size: 25;
 }
 .NavBar .nav_right .User:hover {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #f2d2a1;
+  background-color: #6f9e63;
   padding: 8px;
   color: black;
 }

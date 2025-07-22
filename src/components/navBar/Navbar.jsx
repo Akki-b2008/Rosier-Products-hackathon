@@ -20,42 +20,25 @@ const Navbar = () => {
       });
     }
   }, []);
-
-const handleHover = (ref) => {
-  const tl = gsap.timeline();
-
-  tl.to(ref.current, {
-    scale: 1.4,
-    rotate: 5,
-    y: -3,
-    transformOrigin: "center center",
-    duration: 0.2,
-    ease: "power3.out",
-  })
-  .to(ref.current, {
-    scale: 1.25,
-    rotate: -5,
-    duration: 0.2,
-    ease: "power3.inOut",
-  })
-  .to(ref.current, {
-    scale: 1.3,
-    rotate: 0,
-    duration: 0.15,
-    ease: "power1.out",
+ const handleHover = (ref) => {
+  gsap.to(ref.current, {
+    scale: 1.25,        
+    y: -4,               
+    rotate: 2,           
+    duration: 0.3,      
+    ease: "power2.out",  
   });
 };
 
 const handleLeave = (ref) => {
   gsap.to(ref.current, {
-    scale: 1,
+    scale: 1,            
     y: 0,
     rotate: 0,
-    duration: 0.4,
-    ease: "power4.out",
+    duration: 0.4,      
+    ease: "power2.inOut" 
   });
 };
-
 
   return (
     <div className="NavBar">
@@ -77,21 +60,21 @@ const handleLeave = (ref) => {
         <Search
           ref={searchRef}
           className="Search"
-         onMouseEnter={() => handleHover(searchRef)}
+          onMouseEnter={() => handleHover(searchRef)}
           onMouseLeave={() => handleLeave(searchRef)}
           style={{ display: "inline-block", cursor: "pointer" }}
         />
         <ShoppingCart
           ref={cartRef}
           className="Cart"
-         onMouseEnter={() => handleHover(cartRef)}
+          onMouseEnter={() => handleHover(cartRef)}
           onMouseLeave={() => handleLeave(cartRef)}
           style={{ display: "inline-block", cursor: "pointer" }}
         />
         <UserPlus
           ref={userRef}
           className="User"
-        onMouseEnter={() => handleHover(userRef)}
+          onMouseEnter={() => handleHover(userRef)}
           onMouseLeave={() => handleLeave(userRef)}
           style={{ display: "inline-block", cursor: "pointer" }}
         />

@@ -9,11 +9,11 @@ import "./HeroSec.css"; // updated SCSS file
 const HeroSlider = () => {
   const slides = [
     {
-      title: "A2 DESI GHEE",
+      title: "BILONA A2 DESI GHEE",
       description:
         "Pure, traditional A2 cow ghee made using the bilona method. Rich in taste, healthy for heart and digestion.",
       product:
-        "https://ik.imagekit.io/sl8w2ayuc/Og/yxdy7ebpw5thixxkcmhw.webp?updatedAt=1753083012158",
+        "https://ik.imagekit.io/sl8w2ayuc/Og/71pYpkxrg4L-removebg-preview.webp?updatedAt=1753167517594",
       bgColor: "#f5f0e6",
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/ghee.mp4?updatedAt=1753097786269",
@@ -21,11 +21,11 @@ const HeroSlider = () => {
     },
 
     {
-      title: "FARM-FRESH HONEY",
+      title: "NATURE's Gold HONEY",
       description:
-      "Extracted from ethically maintained bee boxes, our honey is raw, unprocessed, and rich in natural enzymes — a perfect addition to your daily wellness.",
+        "Extracted from ethically maintained bee boxes, our honey is raw, and rich in natural enzymes.",
       product:
-        "https://ik.imagekit.io/sl8w2ayuc/Og/hctfsr4x043kczgspqxp.webp?updatedAt=1753083011914",
+        "https://ik.imagekit.io/sl8w2ayuc/Og/ChatGPT_Image_Jul_22__2025__07_08_12_PM-removebg-preview.webp?updatedAt=1753191640867",
       bgColor: "#fff7e6",
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/honey%20(1).mp4?updatedAt=1753097787308",
@@ -33,12 +33,12 @@ const HeroSlider = () => {
     },
 
     {
-      title: " DARK CHOCOLATE NUT BUTTER",
+      title: " CHOCOLATE NUT BUTTER",
       description:
-        "Crafted with roasted nuts and pure dark chocolate, this deliciously creamy spread is rich in protein, naturally sweetened, and free from preservatives.",
+        "Crafted with roasted nuts and pure dark chocolate, rich in protein, naturally sweetened, and preservatives free.",
       product:
         "https://ik.imagekit.io/sl8w2ayuc/Og/dark_choco_front_65d098de-da74-46fe-8524-d15caa20a2bf-removebg-preview.webp?updatedAt=1753108709289",
-      bgColor: "#f2fcff",
+      bgColor: "#f6e5c2a2",
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/ghee%20-%20Made%20with%20Clipchamp.mp4?updatedAt=1753106730494",
       benefits: ["Healthy Spread", "Rich Taste", "No Preservatives"],
@@ -47,10 +47,10 @@ const HeroSlider = () => {
     {
       title: "COLD PRESSED MUSTURD OIL",
       description:
-        "Wood-pressed from premium mustard seeds, our oil is rich in antioxidants, enhances flavor, and promotes heart health — a true kitchen essential.",
+        "Wood-pressed from premium mustard seeds, our oil is rich in antioxidants, enhances flavor, and promotes heart health.",
 
       product:
-        "https://ik.imagekit.io/sl8w2ayuc/Og/yng4znbwt141f1oem43f.webp?updatedAt=1753083012017",
+        "https://ik.imagekit.io/sl8w2ayuc/Og/mustard-removebg-preview-Pica-removebg-preview.webp?updatedAt=1753192433002",
       bgColor: "#fefae0",
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/oil%20(1).mp4?updatedAt=1753097787794",
@@ -62,7 +62,7 @@ const HeroSlider = () => {
     <div className="HeroSlider">
       <Swiper
         modules={[Autoplay, Pagination, Navigation]}
-        // autoplay={{ delay: 20000, disableOnInteraction: false }}
+        // autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation
         loop
@@ -76,34 +76,40 @@ const HeroSlider = () => {
             >
               <div className="left-side">
                 <div className="text-content">
-                  <h1 className={`heading-${index}`}>{slide.title}</h1>
+                  <h1 className={ `heading heading-${index}`}>{slide.title}</h1>
                   <p>{slide.description}</p>
+
+                  <div className={`benefits benefits-${index}`}>
+                    {slide.benefits?.map((benefit, i) => (
+                      <h2 key={i} className="benefit-heading">
+                        {benefit}
+                      </h2>
+                    ))}
+                  </div>
                 </div>
 
-                <div className={`benefits benefits-${index}`}>
-                  {slide.benefits?.map((benefit, i) => (
-                    <h2 key={i} className="benefit-heading">
-                      {benefit}
-                    </h2>
-                  ))}
+                <div className="product-img">
+                  <img
+                    src={slide.product}
+                    alt={`product-${index}`}
+                    className={`img-${index}`}
+                  />
                 </div>
-
-                <img
-                  src={slide.product}
-                  alt={`product-${index}`}
-                  className={`img-${index}`}
-                />
               </div>
 
               <div className="right-side">
-                <video
-                  src={slide.video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className={`slide-video video-${index}`}
-                />
+                <div>
+                  <video
+                    src={slide.video}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className={`slide-video video-${index}`}
+                  />
+                </div>
+
+                <button className="buy-now-btn">Buy Now</button>
               </div>
             </div>
           </SwiperSlide>

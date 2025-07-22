@@ -105,6 +105,6 @@
     display: inline-block;
   }
   .NavBar .nav_right .Cart {
-    display: none;
+    display: none !important;
   }
 }/*# sourceMappingURL=Navbar.css.map */

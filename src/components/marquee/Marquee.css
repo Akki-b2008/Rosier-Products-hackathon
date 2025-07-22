@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Auge";
+  src: url("../../assets//fonts//Auge.otf");
+}
+.marquee-section {
+  background-color: #40916c;
+  padding: 1.5rem 0;
+  font-size: 3rem;
+}
+.marquee-section .dots {
+  color: white;
+}
+.marquee-section .marquee-item {
+  margin: 0 2rem;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #f6f4f2;
+  font-family: "Auge" serif;
+}
+.marquee-section .marquee-item:hover {
+  color: #0f0502;
+  transition: color 0.3s;
+}/*# sourceMappingURL=Marquee.css.map */

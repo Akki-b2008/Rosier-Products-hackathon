@@ -11,7 +11,7 @@
   padding: clamp(10px, 2vw, 13px) clamp(16px, 4vw, 20px);
   border-bottom: 1.5px solid rgba(107, 107, 107, 0.219);
   box-shadow: 0 5px 20px #4d4d4c;
-  background-color: 	#2d3a2e;
+  background-color: #2d3a2e;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -122,7 +122,7 @@
       }
 
       .Cart {
-        display: none;
+        display: none !important;
       }
     }
   }

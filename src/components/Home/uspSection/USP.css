@@ -1,0 +1,89 @@
+@font-face {
+  font-family: "Spectra";
+  src: url("../../../assets/fonts/Honest.otf");
+}
+.usps {
+  padding: 4rem 2rem;
+  background: #fff5ea;
+}
+.usps .usps-heading {
+  font-size: 2.8rem;
+  text-align: center;
+  font-weight: 400;
+  color: #2e1a06;
+  margin-bottom: 3rem;
+}
+.usps .usps-heading .rosier {
+  color: #D77F00;
+  font-size: clamp(3rem, 5vw, 4rem);
+  font-family: "Spectra";
+}
+.usps .usp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding-bottom: 2rem;
+}
+.usps .usp-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.315);
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-width: 300px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.usps .usp-card:hover {
+  transform: translateY(-12px) scale(1.25);
+  box-shadow: 5px 18px 35px rgba(0, 0, 0, 0.586);
+}
+.usps .usp-card:hover::before {
+  opacity: 1;
+}
+.usps .usp-card:hover .usp-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+.usps .usp-card:hover .usp-title {
+  color: #d18800;
+}
+.usps .usp-card:hover .usp-text {
+  color: #333;
+}
+.usps .usp-card .usp-icon {
+  color: #db9200;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+  transition: transform 0.4s ease;
+  z-index: 1;
+  position: relative;
+}
+.usps .usp-card .usp-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-family: "Rajdhani", sans-serif;
+  color: #2e1a06;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+.usps .usp-card .usp-text {
+  font-size: 1rem;
+  color: #555;
+  font-family: "Open Sans", sans-serif;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .usps {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}/*# sourceMappingURL=USP.css.map */

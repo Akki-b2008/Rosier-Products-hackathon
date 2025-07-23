@@ -14,19 +14,19 @@ const HeroSlider = () => {
         "Pure, traditional A2 cow ghee made using the bilona method. Rich in taste, healthy for heart and digestion.",
       product:
         "https://ik.imagekit.io/sl8w2ayuc/Og/71pYpkxrg4L-removebg-preview.webp?updatedAt=1753167517594",
-      bgColor: "#f5f0e6",
+
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/ghee.mp4?updatedAt=1753097786269",
       benefits: ["Better Digestion", "Bone Strength", "Traditional Goodness"],
     },
 
     {
-      title: "NATURE's Gold HONEY",
+      title: " WILD FOREST HONEY",
       description:
         "Extracted from ethically maintained bee boxes, our honey is raw, and rich in natural enzymes.",
       product:
         "https://ik.imagekit.io/sl8w2ayuc/Og/ChatGPT_Image_Jul_22__2025__07_08_12_PM-removebg-preview.webp?updatedAt=1753191640867",
-      bgColor: "#fff7e6",
+
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/honey%20(1).mp4?updatedAt=1753097787308",
       benefits: ["Boost Immunity", "Natural Energy", "Brain Clarity"],
@@ -38,7 +38,7 @@ const HeroSlider = () => {
         "Crafted with roasted nuts and pure dark chocolate, rich in protein, naturally sweetened, and preservatives free.",
       product:
         "https://ik.imagekit.io/sl8w2ayuc/Og/dark_choco_front_65d098de-da74-46fe-8524-d15caa20a2bf-removebg-preview.webp?updatedAt=1753108709289",
-      bgColor: "#f6e5c2a2",
+
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/ghee%20-%20Made%20with%20Clipchamp.mp4?updatedAt=1753106730494",
       benefits: ["Healthy Spread", "Rich Taste", "No Preservatives"],
@@ -51,7 +51,6 @@ const HeroSlider = () => {
 
       product:
         "https://ik.imagekit.io/sl8w2ayuc/Og/mustard-removebg-preview-Pica-removebg-preview.webp?updatedAt=1753192433002",
-      bgColor: "#fefae0",
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/oil%20(1).mp4?updatedAt=1753097787794",
       benefits: ["Heart Friendly", "Strong Aroma", "Chemical Free"],
@@ -72,11 +71,10 @@ const HeroSlider = () => {
           <SwiperSlide key={index}>
             <div
               className="slide-container"
-              style={{ backgroundColor: slide.bgColor }}
             >
               <div className="left-side">
                 <div className="text-content">
-                  <h1 className={ `heading heading-${index}`}>{slide.title}</h1>
+                  <h1 className={`heading heading-${index}`}>{slide.title}</h1>
                   <p>{slide.description}</p>
 
                   <div className={`benefits benefits-${index}`}>

@@ -1,0 +1,168 @@
+@font-face {
+  font-family: "Ordinary";
+  src: url("../../assets/fonts/Ordinary.ttf");
+}
+.footer {
+  position: relative;
+  background: #fff;
+  padding: clamp(2.5rem, 5vw, 3rem) clamp(2.5rem, 5vw, 5rem);
+  border-top: 2px solid rgba(150, 144, 144, 0.3294117647);
+}
+.footer .footer-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(2.5rem, 4vw, 3.3rem);
+  border-radius: clamp(20px, 3vw, 40px);
+  border: 2px solid rgba(51, 50, 50, 0.207);
+  box-shadow: inset 2px 1px 6px rgba(0, 0, 0, 0.31);
+}
+.footer .footer-container .footer-left {
+  width: 100%;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+.footer .footer-container .footer-left .footer-logo {
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 400;
+  font-family: "Ordinary";
+  color: #111;
+}
+.footer .footer-container .footer-left .footer-description {
+  margin: clamp(1.2rem, 3vw, 1.6rem) 0;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #666;
+}
+.footer .footer-container .footer-left .footer-socials {
+  display: flex;
+  gap: clamp(0.8rem, 2vw, 1rem);
+  margin-top: clamp(1rem, 2vw, 1.2rem);
+}
+.footer .footer-container .footer-left .footer-socials .icon {
+  cursor: pointer;
+  color: #666;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.3s;
+}
+.footer .footer-container .footer-left .footer-socials .icon:hover {
+  color: #e06324;
+  transform: scale(1.1);
+}
+.footer .footer-container .footer-right {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(2rem, 4vw, 3rem);
+  justify-content: flex-start;
+}
+.footer .footer-container .footer-right .footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 2vw, 1rem);
+}
+.footer .footer-container .footer-right .footer-links h3 {
+  font-family: "general sans";
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  color: #111;
+}
+.footer .footer-container .footer-right .footer-links ul {
+  list-style: none;
+}
+.footer .footer-container .footer-right .footer-links ul li {
+  margin-bottom: clamp(0.6rem, 1vw, 0.8rem);
+}
+.footer .footer-container .footer-right .footer-links ul li a {
+  font-family: "General Sans";
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  text-decoration: none;
+  color: #666;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.footer .footer-container .footer-right .footer-links ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.footer .footer-container .footer-right .footer-links ul li a:hover::after {
+  width: 100%;
+}
+@media (max-width: 550px) {
+  .footer .footer-container {
+    flex-direction: column;
+  }
+  .footer .footer-container .footer-left,
+  .footer .footer-container .footer-right {
+    width: 100%;
+    gap: clamp(1rem, 4vw, 2rem);
+    justify-content: flex-start;
+  }
+  .footer .footer-bottom {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1050px) {
+  .footer .footer-container .footer-left,
+  .footer .footer-container .footer-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .footer .footer-bottom {
+    flex-direction: column;
+  }
+}
+@media (min-width: 1051px) {
+  .footer .footer-container {
+    flex-wrap: nowrap;
+  }
+  .footer .footer-container .footer-left {
+    width: 35%;
+  }
+  .footer .footer-container .footer-right {
+    width: 65%;
+    justify-content: flex-end;
+  }
+}
+.footer .footer-bottom {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  border-top: 1px solid #eee;
+  padding-top: clamp(1rem, 3vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.8rem, 2vw, 1rem);
+  align-items: center;
+  justify-content: space-between;
+}
+.footer .footer-bottom .footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  justify-content: center;
+}
+.footer .footer-bottom .footer-legal a {
+  color: #666;
+  text-decoration: none;
+}
+.footer .footer-bottom .footer-legal a:hover {
+  text-decoration: underline;
+}
+.footer .footer-watermark {
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: 1;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.516);
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  letter-spacing: -2px;
+  z-index: 0;
+}/*# sourceMappingURL=Footer.css.map */

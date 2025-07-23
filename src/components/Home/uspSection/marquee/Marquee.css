@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Auge";
-  src: url("../../assets//fonts//Auge.otf");
+  font-family: "Pafigo";
+  src: url("../../../../assets/fonts/Pafigo.ttf");
 }
 .marquee-section {
   background-color: #40916c;
-  padding: 1.5rem 0;
-  font-size: 3rem;
+  padding: clamp(1rem, 5vw, 2rem) 0;
+  font-size: clamp(1.8rem, 5vw, 3rem);
 }
 .marquee-section .dots {
   color: white;
@@ -15,7 +15,9 @@
   white-space: nowrap;
   font-weight: 600;
   color: #f6f4f2;
-  font-family: "Auge" serif;
+  font-family: "Pafigo", serif;
+  font-weight: 800;
+  letter-spacing: 4px;
 }
 .marquee-section .marquee-item:hover {
   color: #0f0502;

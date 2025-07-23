@@ -1,0 +1,47 @@
+.reels-section {
+  padding: clamp(2rem, 5vw, 4rem);
+  background: #f8f8f8;
+  text-align: center;
+
+  .reels-heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 2rem;
+    font-family: "General Sans", sans-serif;
+  }
+
+  .reels-container {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .reel-card {
+      min-width: 250px;
+      max-width: 300px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+      border-radius: 1rem;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+
+      video {
+        width: 100%;
+        border-radius: 1rem 1rem 0 0;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      p {
+        padding: 0.8rem;
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+}

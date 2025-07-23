@@ -1,67 +1,66 @@
 import React, { useEffect } from "react";
-import {
-  Leaf,
-  Droplet,
-  PackageCheck,
-  Truck,
-  ShieldCheck,
-  HeartPulse,
-  Sparkles,
-  Star,
-  ThumbsUp,
-  ThumbsDown,
-  HandHeart,
-  Handshake,
-  ShoppingBag,
-  Recycle,
-  Flame,
-} from "lucide-react";
+import { Leaf, Flame, PackageCheck, ShieldCheck } from "lucide-react";
 import { gsap } from "gsap";
-import Marquee from "../marquee/Marquee";
+import Marquee from "./marquee/Marquee";
 import "./USP.css";
 
 const USP = () => {
   useEffect(() => {
-    gsap.from(".usps-heading", {
-      y: -30,
-      opacity: 0,
-      duration: 1,
-      ease: "power2.out",
-    });
+    const runAnimation = () => {
+      gsap.from(".usps-heading", {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      });
 
-    gsap.from(".usp-card", {
-      y: 40,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.8,
-      ease: "power2.out",
-      delay: 0.3,
-    });
+      gsap.from(".usp-card", {
+        y: 40,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "power2.out",
+        delay: 0.3,
+      });
 
-    gsap.from([".trust-heading", ".trust-subtext"], {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3,
-      ease: "power3.out",
-      delay: 0.5,
-    });
+      gsap.from([".trust-heading", ".trust-subtext"], {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power3.out",
+        delay: 0.5,
+      });
 
-    gsap.from([".sustain-heading", ".sustain-subtext"], {
-      y: 50,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3,
-      ease: "power3.out",
-      delay: 0.5,
-    });
+      gsap.from([".sustain-heading", ".sustain-subtext"], {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.3,
+        ease: "power3.out",
+        delay: 0.8,
+      });
+    };
+
+    // ✅ Wait until fonts are fully loaded before running animation
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(runAnimation);
+    } else {
+      // Fallback if document.fonts not supported
+      window.addEventListener("load", runAnimation);
+      return () => window.removeEventListener("load", runAnimation);
+    }
   }, []);
 
   return (
     <>
       <Marquee />
+
       <section className="usps">
-        <h2 className="usps-heading">Why Choose Our Products?</h2>
+        <h2 className="usps-heading">
+          why <span className="rosier">ROSIER ?</span>
+        </h2>
+
         <div className="usp-grid">
           <div className="usp-card">
             <Leaf className="usp-icon" size={36} />
@@ -90,14 +89,6 @@ const USP = () => {
             <h3 className="usp-title">Safe & Secure</h3>
             <p className="usp-text">
               We follow hygienic practices and secure packaging.
-            </p>
-          </div>
-
-          <div className="usp-card">
-            <Star className="usp-icon" size={36} />
-            <h3 className="usp-title">5-Star Rated</h3>
-            <p className="usp-text">
-              Loved and trusted by our loyal customers.
             </p>
           </div>
         </div>

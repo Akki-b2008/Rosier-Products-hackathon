@@ -1,4 +1,4 @@
-import { Menu, Search, ShoppingCart, UserPlus, UserRound } from "lucide-react";
+import { Menu, Search, ShoppingCart, UserPlus } from "lucide-react";
 import "./Navbar.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";

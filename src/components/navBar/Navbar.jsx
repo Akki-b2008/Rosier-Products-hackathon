@@ -2,6 +2,7 @@ import { Menu, Search, ShoppingCart, UserPlus } from "lucide-react";
 import "./Navbar.css";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navRef = useRef();
@@ -20,25 +21,25 @@ const Navbar = () => {
       });
     }
   }, []);
- const handleHover = (ref) => {
-  gsap.to(ref.current, {
-    scale: 1.25,        
-    y: -4,               
-    rotate: 2,           
-    duration: 0.3,      
-    ease: "power2.out",  
-  });
-};
+  const handleHover = (ref) => {
+    gsap.to(ref.current, {
+      scale: 1.25,
+      y: -4,
+      rotate: 2,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  };
 
-const handleLeave = (ref) => {
-  gsap.to(ref.current, {
-    scale: 1,            
-    y: 0,
-    rotate: 0,
-    duration: 0.4,      
-    ease: "power2.inOut" 
-  });
-};
+  const handleLeave = (ref) => {
+    gsap.to(ref.current, {
+      scale: 1,
+      y: 0,
+      rotate: 0,
+      duration: 0.4,
+      ease: "power2.inOut",
+    });
+  };
 
   return (
     <div className="NavBar">
@@ -50,34 +51,83 @@ const handleLeave = (ref) => {
       </div>
 
       <div ref={navRef} className="nav_center">
-        <h2>Home</h2>
-        <h2>Products</h2>
-        <h2>Catogaries</h2>
-        <h2>About</h2>
+        <NavLink
+          style={{
+            color: "black",
+            textDecoration: "none",
+          }}
+          to={"/"}
+        >
+          <h2>Home</h2>
+        </NavLink>
+
+        <NavLink
+          style={{
+            color: "black",
+            textDecoration: "none",
+          }}
+          to={"/products"}
+        >
+          <h2>Products</h2>
+        </NavLink>
+
+        <NavLink
+          style={{
+            color: "black",
+            textDecoration: "none",
+          }}
+          to={"/about"}
+        >
+          <h2>About</h2>
+        </NavLink>
+
+        <NavLink
+          style={{
+            color: "black",
+            textDecoration: "none",
+          }}
+          to={"/contact-us"}
+        >
+          <h2>Contact Us</h2>
+        </NavLink>
       </div>
 
       <div className="nav_right">
-        <Search
+        <span
           ref={searchRef}
-          className="Search"
           onMouseEnter={() => handleHover(searchRef)}
           onMouseLeave={() => handleLeave(searchRef)}
           style={{ display: "inline-block", cursor: "pointer" }}
-        />
-        <ShoppingCart
+        >
+          <Search className="Search" />
+        </span>
+
+        <span
           ref={cartRef}
-          className="Cart"
           onMouseEnter={() => handleHover(cartRef)}
           onMouseLeave={() => handleLeave(cartRef)}
           style={{ display: "inline-block", cursor: "pointer" }}
-        />
-        <UserPlus
+        >
+          <ShoppingCart  style={{
+          color: "white",
+          textDecoration: 'none'
+        }} className="Cart" />{" "}
+        </span>
+
+        <span
           ref={userRef}
-          className="User"
+          style={{ display: "inline-block", cursor: "pointer" }}
           onMouseEnter={() => handleHover(userRef)}
           onMouseLeave={() => handleLeave(userRef)}
-          style={{ display: "inline-block", cursor: "pointer" }}
-        />
+        >
+          <NavLink style={{
+          color: "white",
+          textDecoration: 'none'
+        }} to={"/user"}>
+            <UserPlus className="User" />
+          </NavLink>
+        </span>
+
         <Menu className="Menu" />
       </div>
     </div>

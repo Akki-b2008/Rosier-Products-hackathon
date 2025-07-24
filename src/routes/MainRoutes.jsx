@@ -8,7 +8,11 @@ const ProductDetails = lazy(() =>
 );
 const AboutUS = lazy(() => import("../pages/aboutUS/AboutUS.jsx"));
 const AuthForm = lazy(() => import("../pages/authForm/AuthForm.jsx"));
-const ContactUS = lazy(() => import("../pages/contactUS/ContactUS.jsx"));
+
+const Blog = lazy(() => import("../pages/community/Community.jsx"));
+const BlogDetails = lazy(() =>
+  import("../components/community/blogDetail/BlogDetails.jsx")
+);
 
 const MainRoutes = () => {
   return (
@@ -17,8 +21,9 @@ const MainRoutes = () => {
       <Route path="/products" element={<Products />} />
       <Route path="/product-details/:id" element={<ProductDetails />} />
       <Route path="/about" element={<AboutUS />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog-details/:id" element={<BlogDetails />} />
       <Route path="/user" element={<AuthForm />} />
-      <Route path="/contact-us" element={<ContactUS />} />
     </Routes>
   );
 };

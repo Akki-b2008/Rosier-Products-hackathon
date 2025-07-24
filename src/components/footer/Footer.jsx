@@ -20,24 +20,6 @@ const Footer = () => {
 
         <div className="footer-right">
           <div className="footer-links">
-            <h3>Helpful Links</h3>
-            <ul>
-              <li>
-                <a href="#">Recipes</a>
-              </li>
-              <li>
-                <a href="#">All Products</a>
-              </li>
-              <li>
-                <a href="#">Our Story</a>
-              </li>
-              <li>
-                <a href="#">Blog</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footer-links">
             <h3> Policy</h3>
             <ul>
               <li>
@@ -71,13 +53,8 @@ const Footer = () => {
       </div>
 
         <div className="footer-bottom">
-          <p>© 2025 RosierFoods. All rights reserved.</p>
+          <p>© 2025 Rosier Foods. All rights reserved.</p>
         </div>
-
-      
-      {/* <div className="footer-watermark">
-        <h1 >Rosier</h1>
-      </div> */}
     </footer>
   );
 };

@@ -6,9 +6,6 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const navRef = useRef();
-  const searchRef = useRef();
-  const cartRef = useRef();
-  const userRef = useRef();
 
   useEffect(() => {
     if (navRef.current) {
@@ -21,34 +18,36 @@ const Navbar = () => {
       });
     }
   }, []);
-  const handleHover = (ref) => {
-    gsap.to(ref.current, {
-      scale: 1.25,
-      y: -4,
-      rotate: 2,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-  };
+  // const handleHover = (ref) => {
+  //   gsap.to(ref.current, {
+  //     scale: 1.05,
+  //     y: -2,
+  //     rotate: 1,
+  //     duration: 0.2,
+  //     ease: "power2.out",
+  //   });
+  // };
 
-  const handleLeave = (ref) => {
-    gsap.to(ref.current, {
-      scale: 1,
-      y: 0,
-      rotate: 0,
-      duration: 0.4,
-      ease: "power2.inOut",
-    });
-  };
+  // const handleLeave = (ref) => {
+  //   gsap.to(ref.current, {
+  //     scale: 1,
+  //     y: 0,
+  //     rotate: 0,
+  //     duration: 0.4,
+  //     ease: "power2.inOut",
+  //   });
+  // };
 
   return (
     <div className="NavBar">
-      <div className="logo">
-        <img
-          src="https://ik.imagekit.io/sl8w2ayuc/Og/logo_1_1_bb8fb2d6-681f-4ca4-aad5-5dbc7e581ce4.webp?updatedAt=1753033753018"
-          alt=""
-        />
-      </div>
+      <NavLink to={"/"}>
+        <div className="logo">
+          <img
+            src="https://ik.imagekit.io/sl8w2ayuc/Og/logo_1_1_bb8fb2d6-681f-4ca4-aad5-5dbc7e581ce4.webp?updatedAt=1753033753018"
+            alt=""
+          />
+        </div>
+      </NavLink>
 
       <div ref={navRef} className="nav_center">
         <NavLink
@@ -86,44 +85,35 @@ const Navbar = () => {
             color: "black",
             textDecoration: "none",
           }}
-          to={"/contact-us"}
+          to={"/blog"}
         >
-          <h2>Contact Us</h2>
+          <h2>Community</h2>
         </NavLink>
       </div>
 
       <div className="nav_right">
-        <span
-          ref={searchRef}
-          onMouseEnter={() => handleHover(searchRef)}
-          onMouseLeave={() => handleLeave(searchRef)}
-          style={{ display: "inline-block", cursor: "pointer" }}
-        >
+        <span style={{ display: "inline-block", cursor: "pointer" }}>
           <Search className="Search" />
         </span>
 
-        <span
-          ref={cartRef}
-          onMouseEnter={() => handleHover(cartRef)}
-          onMouseLeave={() => handleLeave(cartRef)}
-          style={{ display: "inline-block", cursor: "pointer" }}
-        >
-          <ShoppingCart  style={{
-          color: "white",
-          textDecoration: 'none'
-        }} className="Cart" />{" "}
+        <span style={{ display: "inline-block", cursor: "pointer" }}>
+          <ShoppingCart
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            className="Cart"
+          />{" "}
         </span>
 
-        <span
-          ref={userRef}
-          style={{ display: "inline-block", cursor: "pointer" }}
-          onMouseEnter={() => handleHover(userRef)}
-          onMouseLeave={() => handleLeave(userRef)}
-        >
-          <NavLink style={{
-          color: "white",
-          textDecoration: 'none'
-        }} to={"/user"}>
+        <span style={{ display: "inline-block", cursor: "pointer" }}>
+          <NavLink
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            to={"/user"}
+          >
             <UserPlus className="User" />
           </NavLink>
         </span>

@@ -81,7 +81,7 @@ const AuthPage = () => {
             </button>
 
             <p className="switch-auth">
-              {isLogin ? "Are you new ? " : "Already have an account ?"}{" "}
+              {isLogin ? "Are you new ? " : "Already have an account ? "}{" "}
               <span
                 onClick={() => setIsLogin(!isLogin)}
                 className="link-toggle"

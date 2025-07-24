@@ -1,22 +1,43 @@
-.featured-container {
-  padding: 4rem 2rem;
-  background: #fdfdfb;
+@font-face {
+  font-family: "Recoleta";
+  src: url("../../../assets/fonts/Recoleta.otf");
+}
 
-  .featured-heading {
-    text-align: center;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 600;
-    margin-bottom: 3rem;
-    color: #222;
+.featured-section {
+  padding: clamp(2rem, 5vw, 4rem);
+  background-color: #fefefe;
+
+  .featured-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+    justify-content: center;
+
+    h2 {
+      font-family: 'Recoleta';
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      color: #333;
+    }
+
+    .icon {
+      color: #e67300;
+      animation: sparklePop 1.2s ease infinite alternate;
+    }
   }
 
-  .horizontal-track {
+  .products-wrapper {
     display: flex;
+    flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
     scroll-snap-type: x mandatory;
-    gap: 2rem;
     padding-bottom: 1rem;
-    scrollbar-width: thin;
+
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
       height: 8px;
@@ -24,70 +45,85 @@
 
     &::-webkit-scrollbar-thumb {
       background: #ccc;
-      border-radius: 8px;
+      border-radius: 10px;
+    }
+
+    .product-card {
+      flex: 0 0 clamp(250px, 30vw, 320px);
+      scroll-snap-align: start;
     }
   }
 
   .product-card {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
     background: #fff;
     border-radius: 1.5rem;
-    padding: 2rem;
-    min-width: 280px;
-    max-width: 300px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeUp 0.8s ease both;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
 
     &:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      transform: translateY(-5px);
     }
 
-    .tag {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: #ffeccc;
-      color: #8c5b00;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.3rem 0.6rem;
-      border-radius: 0.5rem;
-    }
-
-    .product-img {
+    .product-image {
+      position: relative;
       width: 100%;
-      height: 180px;
-      object-fit: contain;
-      margin-bottom: 1rem;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+
+      .product-tag {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 0.8rem;
+        background-color: #ffdbac;
+        color: #222;
+        font-size: clamp(0.75rem, 2vw, 0.9rem);
+        padding: 0.3rem 0.7rem;
+        border-radius: 999px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
     }
 
-    .product-name {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
+    .product-info {
+      padding: 1.2rem 1.5rem;
 
-    .product-price {
-      font-size: 1rem;
-      color: #333;
-      margin-bottom: 1rem;
-    }
+      .product-name {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 600;
+      }
 
-    .product-btn {
-      padding: 0.5rem 1.2rem;
-      background: #222;
-      color: #fff;
-      border: none;
-      border-radius: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
+      .product-price {
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        font-weight: 500;
+        color: #e67300;
+        margin-bottom: 0.8rem;
+      }
 
-      &:hover {
-        background: #000;
+      .explore-btn {
+        padding: 0.5rem 1rem;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        background-color: #222;
+        color: #fff;
+        border: none;
+        border-radius: 999px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #000;
+        }
       }
     }
   }
@@ -95,17 +131,22 @@
 
 @keyframes fadeUp {
   0% {
+    transform: translateY(20px);
     opacity: 0;
-    transform: translateY(20px) scale(0.95);
   }
   100% {
+    transform: translateY(0px);
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
-.fade-in {
-  opacity: 0;
-  animation-name: fadeUp;
-  animation-fill-mode: both;
+@keyframes sparklePop {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
 }

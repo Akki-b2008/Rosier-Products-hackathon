@@ -1,11 +1,13 @@
-import { Menu, Search, ShoppingCart, UserPlus } from "lucide-react";
+import { Menu, MenuIcon, Search, ShoppingCart, UserPlus , X } from "lucide-react";
 import "./Navbar.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { NavLink } from "react-router-dom";
+import MenuHeader from './menu/Menu'
 
 const Navbar = () => {
   const navRef = useRef();
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (navRef.current) {
@@ -40,6 +42,7 @@ const Navbar = () => {
 
   return (
     <div className="NavBar">
+      {isOpen && <MenuHeader isOpen={isOpen} setIsOpen={setIsOpen} />}
       <NavLink to={"/"}>
         <div className="logo">
           <img
@@ -117,8 +120,9 @@ const Navbar = () => {
             <UserPlus className="User" />
           </NavLink>
         </span>
-
-        <Menu className="Menu" />
+        <button onClick={() => setIsOpen(!isOpen)} className="nav_right_menu">
+          {!isOpen ? <Menu size={48} /> : <X size={38} />}
+        </button>
       </div>
     </div>
   );

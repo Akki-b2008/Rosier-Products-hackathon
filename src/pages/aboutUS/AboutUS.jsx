@@ -57,12 +57,12 @@ export default function AboutPage() {
 
       <section className="about-section image-overlap">
         <div className="image-container">
-          <img src="/images/wheat-flour.jpg" alt="Stone-ground Flour" />
+          <img src="/images/wheat-flour.jpg" alt="Stone-pressed oil" />
         </div>
         <div className="text-content">
           <h2>Slow Food Philosophy</h2>
           <p>
-            We don’t rush nature. Our small-batch nut butters and wood-pressed
+            We don’t rush nature. Our small-batch nut butters and stone-pressed
             oils are crafted slowly to retain full nutritional value and rich,
             authentic flavor.
           </p>

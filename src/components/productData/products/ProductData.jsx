@@ -34,7 +34,7 @@ const productsData = [
     price: "₹ 399",
     category: "Oils",
     image: "https://ik.imagekit.io/sl8w2ayuc/Og/2_c64d1cf8-55d0-41fa-83a3-130a0c84f191.webp?updatedAt=1753437714572",
-    description: "Stone-pressed yellow mustard oil packed with antioxidants and bold aroma.",
+    description: "Stone-pressed yellow mustard oil packed with antioxidants.",
   },
   {
     id: 5,

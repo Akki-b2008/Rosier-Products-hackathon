@@ -23,7 +23,7 @@ const ProductsComp = () => {
                             .filter((item) => item.category === cat)
                             .map((product) => (
                                 <div className="product-card" key={product.id}>
-                                    <Link to={`/productDetails/${product.id}`}>
+                                    <Link to={`/product-details/${product.id}`}>
                                         <div className="card-top">
                                             <img src={product.image} alt={product.name} />
                                         </div>

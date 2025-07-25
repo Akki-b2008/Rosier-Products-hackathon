@@ -25,7 +25,7 @@ const HeroSlider = () => {
       description:
         "Extracted from ethically maintained bee boxes, our honey is raw, and rich in natural enzymes.",
       product:
-        "https://ik.imagekit.io/sl8w2ayuc/Og/ChatGPT_Image_Jul_22__2025__07_08_12_PM-removebg-preview.webp?updatedAt=1753191640867",
+        "https://ik.imagekit.io/sl8w2ayuc/Og/81zHR0l51XL-removebg-preview.webp?updatedAt=1753437319389",
 
       video:
         "https://ik.imagekit.io/sl8w2ayuc/Og/honey%20(1).mp4?updatedAt=1753097787308",

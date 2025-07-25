@@ -128,8 +128,8 @@
   height: clamp(200px, 40vw, 450px);
 }
 .HeroSlider .left-side .img-1 {
-  right: clamp(50px, 7vw, 60px);
-  top: clamp(60px, 15vw, 100px);
+  right: clamp(50px, 7vw, 100px);
+  top: clamp(60px, 17vw, 120px);
   width: clamp(200px, 30vw, 360px);
   height: clamp(200px, 30vw, 380px);
 }
@@ -282,9 +282,9 @@
   }
   .left-side .product-img .img-1 {
     right: clamp(-45px, 5vw, -30px);
-    top: clamp(35px, 8vw, 80px);
-    width: clamp(270px, 30vw, 300px);
-    height: clamp(290px, 30vw, 380px);
+    top: clamp(35px, 9vw, 100px);
+    width: clamp(250px, 30vw, 300px);
+    height: clamp(250px, 30vw, 380px);
   }
   .left-side .product-img .img-2 {
     right: clamp(5px, 2vw, 30px);

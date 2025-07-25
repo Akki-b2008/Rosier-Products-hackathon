@@ -13,9 +13,9 @@
 .marquee-section .marquee-item {
   margin: 0 2rem;
   white-space: nowrap;
-  font-weight: 600;
   color: #f6f4f2;
   font-family: "Pafigo", serif;
+  font-size: clamp(1.9rem, 5vw, 3rem);
   font-weight: 800;
   letter-spacing: 4px;
 }

@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "Spectra";
+  src: url("../../../assets/fonts/Specta.ttf");
+}
+@font-face {
+  font-family: "b";
+  src: url("../../../assets/fonts/Specta.ttf");
+}
+.products-page .img {
+  width: 100%;
+}
+.products-page .img img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.products-page .product-category {
+  padding: 3rem clamp(1rem, 3vw, 4rem);
+}
+.products-page .product-category h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 400;
+  font-family: "b";
+  margin-bottom: 2rem;
+  border-bottom: 3px solid rgb(171, 120, 18);
+}
+.products-page .product-category .products-wrapper {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  padding: 0.3rem;
+  border-radius: 18px;
+}
+.products-page .product-category .products-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.products-page .product-category .products-wrapper::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.products-page .product-category .products-wrapper .product-card {
+  flex: 0 0 clamp(250px, 30vw, 330px);
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  align-content: space-between;
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 30px rgba(152, 8, 8, 0.08);
+}
+.products-page .product-category .products-wrapper .product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+.products-page .product-category .products-wrapper .product-card .card-top {
+  background: linear-gradient(to top, #f7f7f7, #fff);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.products-page .product-category .products-wrapper .product-card .card-top img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.products-page .product-category .products-wrapper .product-card .card-top .brand {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom {
+  padding: 1rem 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .product-name {
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .product-desc {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .price-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .price-cart .price {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 600;
+  color: #222;
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .price-cart .add-cart {
+  padding: 0.5rem 1.2rem;
+  text-align: center;
+  font-family: "Spectra";
+  font-size: clamp(0.5rem, 3vw, 1.1rem);
+  border: none;
+  border-radius: 30px;
+  background: rgba(4, 63, 27, 0.8196078431);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .price-cart .add-cart:hover {
+  background: #693d1a;
+  transform: scale(1.05);
+}
+.products-page .product-category .products-wrapper .product-card .card-bottom .price-cart .add-cart:active {
+  transform: scale(0.95);
+}
+@media (max-width: 600px) {
+  .products-page .product-category .products-wrapper .product-card .card-bottom .price-cart .add-cart:hover {
+    background: rgba(4, 63, 27, 0.8196078431);
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=ProductsComp.css.map */

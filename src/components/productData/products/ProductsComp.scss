@@ -1,0 +1,164 @@
+@font-face {
+  font-family: "Spectra";
+  src: url("../../../assets/fonts/Specta.ttf");
+}
+
+@font-face {
+  font-family: "b";
+  src: url("../../../assets/fonts/Specta.ttf");
+}
+
+.products-page {
+  .img {
+    width: 100%;
+
+    img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+  }
+
+  .product-category {
+    padding: 3rem clamp(1rem, 3vw, 4rem);
+
+    h2 {
+      width: fit-content;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      font-weight: 400;
+      font-family: "b";
+      margin-bottom: 2rem;
+      border-bottom: 3px solid rgb(171, 120, 18);
+    }
+
+    .products-wrapper {
+      display: flex;
+      gap: 2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      padding: 0.3rem;
+      border-radius: 18px;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 4px;
+      }
+
+      .product-card {
+        flex: 0 0 clamp(250px, 30vw, 330px);
+        display: flex;
+        height: 80%;
+        flex-direction: column;
+        align-content: space-between;
+        border-radius: 16px;
+        background: #fff;
+        overflow: hidden;
+        scroll-snap-align: start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 10px 30px rgba(152, 8, 8, 0.08);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-top {
+          background: linear-gradient(to top, #f7f7f7, #fff);
+          display: flex;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+          }
+
+          .brand {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: #000;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+          }
+        }
+
+        .card-bottom {
+          padding: 1rem 1.2rem;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .product-name {
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            color: #333;
+          }
+
+          .product-desc {
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+          }
+
+          .price-cart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+              font-size: clamp(1rem, 2.5vw, 1.2rem);
+              font-weight: 600;
+              color: #222;
+            }
+
+            .add-cart {
+              padding: 0.5rem 1.2rem;
+              text-align: center;
+              font-family: "Spectra";
+              font-size: clamp(0.5rem, 3vw, 1.1rem);
+              border: none;
+              border-radius: 30px;
+              background: #043f1bd1;
+              color: #fff;
+              cursor: pointer;
+              transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+
+              &:hover {
+                background: #693d1a;
+                transform: scale(1.05);
+              }
+
+              &:active {
+                transform: scale(0.95);
+              }
+
+              @media (max-width: 600px) {
+                &:hover {
+                  background: #043f1bd1;
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

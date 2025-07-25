@@ -1,8 +1,8 @@
-import React from 'react'
+import ProductsComp from '../../components/productData/products/ProductsComp'
 
 const Products = () => {
   return (
-    <div>Products</div>
+ <ProductsComp />
   )
 }
 

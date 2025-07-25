@@ -1,51 +1,64 @@
-import React from "react";
-import { motion } from "framer-motion";
 import "./SocialVideo.css";
 
-const reels = [
-  {
-    id: 1,
-    videoUrl: "/videos/reel1.mp4",
-    title: "From Farm to Table",
-  },
-  {
-    id: 2,
-    videoUrl: "/videos/reel2.mp4",
-    title: "Behind the Scenes",
-  },
-  {
-    id: 3,
-    videoUrl: "/videos/reel3.mp4",
-    title: "Authentic Taste",
-  },
-];
+const ReelsSection = () => {
 
-const Reels = () => {
+  const reelsData = [
+    {
+      id: 1,
+      videoSrc: "src/assets/video/video1.mp4",
+      caption: "Loved this very much! My food tastes so fresh! 💛",
+      user: "@naturalfoodslover",
+    },
+    {
+      id: 2,
+      videoSrc: "src/assets/video/video2.mp4",
+      caption: "Rosier Ghee made my makhan mishri taste heavenly! 😍",
+      user: "@healthykitchenqueen",
+    },
+    {
+      id: 3,
+      videoSrc: "src/assets/video/video3.mp4",
+      caption: "My mom swears by it now! Authentic and pure.",
+      user: "@vediclivingdaily",
+    },
+    {
+      id: 4,
+      videoSrc: "src/assets/video/video4.mp4",
+      caption: "Cooking with Rosier feels like returning to tradition.",
+      user: "@flavorroots",
+    },
+    {
+      id: 5,
+      videoSrc: "src/assets/video/Video5.mp4",
+      caption: "Pure and honest food product that my family trusts.",
+      user: "@momapprovedeats",
+    },
+  ];
   return (
     <section className="reels-section">
-      <h2 className="reels-heading">Brand Reels</h2>
-      <div className="reels-container">
-        {reels.map((reel) => (
-          <motion.div
-            className="reel-card"
-            key={reel.id}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
+      <h2 className="title">Real People. Real Stories.</h2>
+      <p className="subtitle">See how our customers enjoy Rosier Foods every day.</p>
+
+      <div className="reels-wrapper">
+        {reelsData.map(({ id, videoSrc, caption, user }) => (
+          <div className="reel-card" key={id}>
             <video
-              src={reel.videoUrl}
+              src={videoSrc}
               muted
               loop
               playsInline
-              onMouseOver={(e) => e.target.play()}
-              onMouseOut={(e) => e.target.pause()}
+              onMouseOver={e => e.target.play()}
+              onMouseOut={e => e.target.pause()}
             />
-            <p>{reel.title}</p>
-          </motion.div>
+            <div className="caption">
+              <p>{caption}</p>
+              <span>{user}</span>
+            </div>
+          </div>
         ))}
       </div>
     </section>
   );
 };
 
-export default Reels;
+export default ReelsSection;

@@ -2,51 +2,55 @@
   font-family: "Recoleta";
   src: url("../../../assets/fonts/Recoleta.otf");
 }
-.featured-section {
-  padding: clamp(2rem, 5vw, 4rem);
-  background-color: #fefefe;
+.main {
+  background-color: #ffefd3;
+  position: relative;
 }
-.featured-section .featured-header {
+.main .featured-section {
+  padding: clamp(2rem, 5vw, 4rem);
+}
+.main .featured-section .featured-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: clamp(2rem, 5vw, 3rem);
   justify-content: center;
 }
-.featured-section .featured-header h2 {
+.main .featured-section .featured-header h2 {
   font-family: "Recoleta";
   font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 600;
   color: #333;
 }
-.featured-section .featured-header .icon {
+.main .featured-section .featured-header .icon {
   color: #e67300;
   animation: sparklePop 1.2s ease infinite alternate;
 }
-.featured-section .products-wrapper {
+.main .featured-section .products-wrapper {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   gap: clamp(1.5rem, 3vw, 2.5rem);
   scroll-snap-type: x mandatory;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
-.featured-section .products-wrapper::-webkit-scrollbar {
-  height: 8px;
+.main .featured-section .products-wrapper::-webkit-scrollbar {
+  height: 4px;
+  width: 20px;
 }
-.featured-section .products-wrapper::-webkit-scrollbar-thumb {
-  background: #ccc;
+.main .featured-section .products-wrapper::-webkit-scrollbar-thumb {
+  background: #6fd39f;
   border-radius: 10px;
 }
-.featured-section .products-wrapper .product-card {
+.main .featured-section .products-wrapper .product-card {
   flex: 0 0 clamp(250px, 30vw, 320px);
   scroll-snap-align: start;
 }
-.featured-section .product-card {
-  background: #fff;
+.main .featured-section .product-card {
+  background-color: #fff;
   border-radius: 1.5rem;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
@@ -54,23 +58,23 @@
   animation: fadeUp 0.6s ease forwards;
   opacity: 0;
 }
-.featured-section .product-card:hover {
+.main .featured-section .product-card:hover {
   transform: translateY(-5px);
 }
-.featured-section .product-card .product-image {
+.main .featured-section .product-card .product-image {
   position: relative;
   width: 100%;
   aspect-ratio: 4/3;
   overflow: hidden;
 }
-.featured-section .product-card .product-image img {
+.main .featured-section .product-card .product-image img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.4s ease;
 }
-.featured-section .product-card .product-image .product-tag {
+.main .featured-section .product-card .product-image .product-tag {
   position: absolute;
   bottom: 0.8rem;
   left: 0.8rem;
@@ -82,22 +86,22 @@
   font-weight: 500;
   text-transform: uppercase;
 }
-.featured-section .product-card .product-info {
+.main .featured-section .product-card .product-info {
   padding: 1.2rem 1.5rem;
 }
-.featured-section .product-card .product-info .product-name {
+.main .featured-section .product-card .product-info .product-name {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   margin-bottom: 0.5rem;
   color: #333;
   font-weight: 600;
 }
-.featured-section .product-card .product-info .product-price {
+.main .featured-section .product-card .product-info .product-price {
   font-size: clamp(1rem, 2.2vw, 1.2rem);
   font-weight: 500;
   color: #e67300;
   margin-bottom: 0.8rem;
 }
-.featured-section .product-card .product-info .explore-btn {
+.main .featured-section .product-card .product-info .explore-btn {
   padding: 0.5rem 1rem;
   font-size: clamp(0.85rem, 2vw, 1rem);
   background-color: #222;
@@ -107,8 +111,17 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.featured-section .product-card .product-info .explore-btn:hover {
+.main .featured-section .product-card .product-info .explore-btn:hover {
   background-color: #000;
+}
+.main .center {
+  position: absolute;
+  left: 20%;
+  bottom: 30%;
+  margin-top: clamp(3rem, 5vw, 5rem);
+  width: 60%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.349);
 }
 
 @keyframes fadeUp {

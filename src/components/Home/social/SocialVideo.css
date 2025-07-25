@@ -1,42 +1,71 @@
+@font-face {
+  font-family: "Deflate";
+  src: url("../../../assets/fonts/Deflate.ttf");
+}
 .reels-section {
-  padding: clamp(2rem, 5vw, 4rem);
-  background: #f8f8f8;
+  padding: clamp(2rem, 5vw, 5rem) 1rem;
+  background-color: #fdf9f3;
   text-align: center;
 }
-.reels-section .reels-heading {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 2rem;
-  font-family: "General Sans", sans-serif;
+.reels-section .title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.5rem;
+  color: #2e2e2e;
+  font-family: "Georgia", serif;
 }
-.reels-section .reels-container {
+.reels-section .subtitle {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #555;
+}
+.reels-section .reels-wrapper {
   display: flex;
-  gap: 2rem;
   overflow-x: auto;
+  gap: clamp(1rem, 2vw, 2rem);
   scroll-snap-type: x mandatory;
   padding-bottom: 1rem;
+  height: 70vh;
 }
-.reels-section .reels-container::-webkit-scrollbar {
-  display: none;
+.reels-section .reels-wrapper::-webkit-scrollbar {
+  height: 6px;
 }
-.reels-section .reels-container .reel-card {
-  min-width: 250px;
-  max-width: 300px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  border-radius: 1rem;
-  background: #fff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+.reels-section .reels-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
 }
-.reels-section .reels-container .reel-card video {
+.reels-section .reels-wrapper .reel-card {
+  height: 100%;
   width: 100%;
-  border-radius: 1rem 1rem 0 0;
-  height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  flex: 0 0 clamp(220px, 30vw, 300px);
+  scroll-snap-align: start;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
-.reels-section .reels-container .reel-card p {
-  padding: 0.8rem;
-  font-weight: 600;
-  font-size: 1rem;
+.reels-section .reels-wrapper .reel-card video {
+  width: 100%;
+  height: 75%;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+.reels-section .reels-wrapper .reel-card .caption {
+  height: 20%;
+  padding: 1rem;
+  text-align: left;
+}
+.reels-section .reels-wrapper .reel-card .caption p {
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  margin-bottom: 0.5rem;
+}
+.reels-section .reels-wrapper .reel-card .caption span {
+  font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+  color: #888;
+}
+.reels-section .reels-wrapper .reel-card:hover {
+  transform: translateY(-5px);
 }/*# sourceMappingURL=SocialVideo.css.map */

@@ -91,7 +91,7 @@
   padding: 8px;
   color: black;
 }
-.NavBar .nav_right .Menu {
+.NavBar .nav_right .nav_right_menu {
   display: none;
 }
 
@@ -102,7 +102,7 @@
   .NavBar .nav_right {
     padding-right: 0;
   }
-  .NavBar .nav_right .Menu {
+  .NavBar .nav_right .nav_right_menu {
     display: inline-block;
   }
   .NavBar .nav_right .Cart {

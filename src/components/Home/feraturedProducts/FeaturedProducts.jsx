@@ -46,7 +46,7 @@ const products = [
 
 const FeaturedProducts = () => {
   return (
-    <>
+    <div className="main">
       <section className="featured-section">
         <div className="featured-header">
           <h2 className="featured-title">Featured Products</h2>
@@ -72,7 +72,7 @@ const FeaturedProducts = () => {
         </div>
       </section>
       <Marquee />
-    </>
+    </div>
   );
 };
 

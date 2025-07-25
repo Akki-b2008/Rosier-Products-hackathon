@@ -1,9 +1,9 @@
-import { Menu, MenuIcon, Search, ShoppingCart, UserPlus , X } from "lucide-react";
+import { CircleUserRound, Menu, Search, ShoppingCart, X } from "lucide-react";
 import "./Navbar.css";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { NavLink } from "react-router-dom";
-import MenuHeader from './menu/Menu'
+import MenuHeader from "./menu/Menu";
 
 const Navbar = () => {
   const navRef = useRef();
@@ -20,37 +20,19 @@ const Navbar = () => {
       });
     }
   }, []);
-  // const handleHover = (ref) => {
-  //   gsap.to(ref.current, {
-  //     scale: 1.05,
-  //     y: -2,
-  //     rotate: 1,
-  //     duration: 0.2,
-  //     ease: "power2.out",
-  //   });
-  // };
-
-  // const handleLeave = (ref) => {
-  //   gsap.to(ref.current, {
-  //     scale: 1,
-  //     y: 0,
-  //     rotate: 0,
-  //     duration: 0.4,
-  //     ease: "power2.inOut",
-  //   });
-  // };
 
   return (
     <div className="NavBar">
       {isOpen && <MenuHeader isOpen={isOpen} setIsOpen={setIsOpen} />}
-      <NavLink to={"/"}>
-        <div className="logo">
+
+      <div className="logo">
+        <NavLink to={"/"}>
           <img
             src="https://ik.imagekit.io/sl8w2ayuc/Og/logo_1_1_bb8fb2d6-681f-4ca4-aad5-5dbc7e581ce4.webp?updatedAt=1753033753018"
             alt=""
           />
-        </div>
-      </NavLink>
+        </NavLink>
+      </div>
 
       <div ref={navRef} className="nav_center">
         <NavLink
@@ -96,17 +78,26 @@ const Navbar = () => {
 
       <div className="nav_right">
         <span style={{ display: "inline-block", cursor: "pointer" }}>
-          <Search className="Search" />
+          <Search className="Search" size={30} />
         </span>
 
         <span style={{ display: "inline-block", cursor: "pointer" }}>
+          <NavLink
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            to={'/cart'}
+          >
           <ShoppingCart
             style={{
               color: "white",
               textDecoration: "none",
             }}
+            size={30}
             className="Cart"
-          />{" "}
+          />
+          </NavLink>
         </span>
 
         <span style={{ display: "inline-block", cursor: "pointer" }}>
@@ -117,12 +108,13 @@ const Navbar = () => {
             }}
             to={"/user"}
           >
-            <UserPlus className="User" />
+            <CircleUserRound className="User" size={30} />
           </NavLink>
         </span>
-        <button onClick={() => setIsOpen(!isOpen)} className="nav_right_menu">
-          {!isOpen ? <Menu size={48} /> : <X size={38} />}
-        </button>
+
+        <span onClick={() => setIsOpen(!isOpen)} className="nav_right_menu">
+          {!isOpen ? <Menu size={32} /> : <X size={32} />}
+        </span>
       </div>
     </div>
   );

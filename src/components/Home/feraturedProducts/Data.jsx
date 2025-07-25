@@ -7,16 +7,8 @@ const products = [
     price: "₹2599",
     tag: "Bestseller",
   },
-  {
+    {
     id: 2,
-    name: "Stone Pressed Oil",
-    image:
-      "https://ik.imagekit.io/sl8w2ayuc/Og/3_8b1bd8da-eff1-4e7e-8968-22ee057b6ef8%20(1).webp?updatedAt=1753383540655",
-    price: "₹449",
-    tag: "New",
-  },
-  {
-    id: 3,
     name: "Raw Forest Honey",
     image:
       "https://ik.imagekit.io/sl8w2ayuc/Og/rosier-foods-pvt-ltd-delhi-yflwxxnwzc.avif?updatedAt=1753383659936",
@@ -24,7 +16,16 @@ const products = [
     tag: "Organic",
   },
   {
-    id: 5,
+    id: 3,
+    name: "Stone Pressed Oil",
+    image:
+      "https://ik.imagekit.io/sl8w2ayuc/Og/3_8b1bd8da-eff1-4e7e-8968-22ee057b6ef8%20(1).webp?updatedAt=1753383540655",
+    price: "₹449",
+    tag: "New",
+  },
+
+  {
+    id: 7,
     name: "Khapli Aata",
     image:
       "https://ik.imagekit.io/sl8w2ayuc/Og/Bestseller.webp?updatedAt=1753383539736",

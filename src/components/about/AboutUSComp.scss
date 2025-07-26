@@ -67,9 +67,12 @@
 }
 
 .story {
-  max-width: 70ch;
-  margin: 0 auto clamp(4rem, 8vw, 6rem);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+
 
   h2 {
     font-size: clamp(1.8rem, 5vw, 2.8rem);

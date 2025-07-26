@@ -58,19 +58,6 @@ export default function AboutUsComp() {
         </p>
       </motion.section>
 
-      {/* Story */}
-      <motion.section
-        className="story"
-        initial={{ x: -50, opacity: 0 }}
-        animate={controls}
-        transition={{ duration: 0.8 }}
-      >
-        <h2>Our Story</h2>
-        <p>
-          Founded with a passion for purity and flavor, Rosier Foods began its journey in 2015...
-        </p>
-      </motion.section>
-
       {/* Mission and Vision */}
       <section className="mission-vision">
         {["Our Mission", "Our Vision"].map((title, idx) => (

@@ -36,21 +36,17 @@
   line-height: 1.7;
 }
 .main .blog-detail .banner {
-  width: 70vw;
-  height: 50vh;
+  width: 60%;
   overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   margin-bottom: clamp(2rem, 4vw, 3rem);
-  background-color: yellow;
 }
 .main .blog-detail .banner img {
-  width: 100vw;
-  height: 100px;
+  width: 100%;
   display: block;
   -o-object-position: bottom;
      object-position: bottom;
-  height: auto;
   -o-object-fit: contain;
      object-fit: contain;
   transition: transform 0.4s ease;
@@ -79,14 +75,9 @@
   font-weight: 600;
   color: #111;
   position: relative;
-}
-.main .blog-detail .content h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: #e6b800;
-  margin-top: 0.5rem;
+  border-bottom: 2px solid rgb(242, 155, 5);
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .main .blog-detail .content p {
   font-size: clamp(1rem, 1.2vw, 1.1rem);

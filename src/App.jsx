@@ -1,13 +1,19 @@
-import Navbar from "./components/navBar/Navbar";
-import Footer from "./components/footer/Footer";
-import MainRoutes from "./routes/MainRoutes";
+import { Suspense, lazy } from "react";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+const Navbar = lazy(() => import("./components/navBar/Navbar"));
+const Footer = lazy(() => import("./components/footer/Footer"));
+const MainRoutes = lazy(() => import("./routes/MainRoutes"));
+import Loader from './components/loader/Loader'
 
 const App = () => {
   return (
     <div>
-      <Navbar />
-      <MainRoutes />
-      <Footer />
+      <ScrollToTop />
+      <Suspense fallback={<Loader />}>
+        <Navbar />
+        <MainRoutes />
+        <Footer />
+      </Suspense>
     </div>
   );
 };
